@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { getRandomThrow, checkResult } from ''
+import { getRandomThrow, checkResult } from './rpsUtils.js';
 
 
 const button = document.querySelector('#button');
@@ -19,7 +19,10 @@ let guesses = 0;
 
 button.addEventListener('click', () => {
     guesses++;
-    const randomizer = getRandomThrow();
+    const computer = getRandomThrow();
+    const compareGuesses = checkResult(player, computer);
+    const checkedRadio = document.querySelector('#input-checked');
+    
 
 
 });

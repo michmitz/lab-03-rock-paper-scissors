@@ -12,18 +12,18 @@ export function getRandomThrow() {
 
 export function checkResult(player, computer) {
     if (player === computer) {
-        return 0;
+        return 'draw'
     } else if (player === 1 && computer === 2) {
-        return 2; //'Rock beats paper, player loses.'
+        return 'lose' //'Rock beats paper, player loses.'
     } else if (player === 1 && computer === 3) {
-        return 1; //'Rock beats scissors, player wins.'
+        return 'win' //'Rock beats scissors, player wins.'
     } else if (player === 2 && computer === 1) {
-        return 1; //'Paper beats rock, player wins.'
+        return 'win' //'Paper beats rock, player wins.'
     } else if (player === 2 && computer === 3) {
-        return 2; //'Scissors beats rock, player loses.'
+        return 'lose' //'Scissors beats rock, player loses.'
     } else if (player === 3 && computer === 1) {
-        return 2; //'Rock beats scissors, player loses.'
+        return 'lose' //'Rock beats scissors, player loses.'
     } else if (player === 3 && computer === 2) {
-        return 1; //'Scissors beats rock, player wins.'
+        return 'win' //'Scissors beats rock, player wins.'
     }
 }
