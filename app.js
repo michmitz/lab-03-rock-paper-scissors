@@ -20,10 +20,34 @@ let guesses = 0;
 button.addEventListener('click', () => {
     guesses++;
     const computer = getRandomThrow();
-    const compareGuesses = checkResult(player, computer);
     const checkedRadio = document.querySelector('#input-checked');
-    
+    console.log('checkedRadio', checkedRadio);
+    const playerGuess = checkedRadio.value;
+    console.log('playerGuess', playerGuess);
 
+    const result = checkResult(playerGuess, computer);
+
+    if (result === 'draw') {
+        draw++;
+        console.log('draw');
+        winLossDisplay.textContent = 'Draw! Try again';
+    }
+    
+    if (result === 'win') {
+        win++;
+        console.log('win');
+        winLossDisplay.textContent = 'You won!';
+    }
+
+    const winsAndDrawsData = wins + draws;
+    const yaLose = guesses - winsAndDrawsData;
+
+
+    if (result === 'lose') {
+        yaLose++
+        console.log('lose');
+        winLossDisplay.textContent = 'You lost! Try again.';
+    }
 
 });
 
@@ -58,4 +82,5 @@ export function checkResult(player, computer) {
     } else if (player === 3 && computer === 2) {
         return 1; //'Scissors beats rock, player wins.'
     }
+
 }*/
