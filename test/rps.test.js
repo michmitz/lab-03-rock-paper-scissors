@@ -4,11 +4,11 @@ import { getRandomThrow, checkResult } from '../rpsUtils.js';
 
 const test = QUnit.test;
 
-test('Should return "win" if passed 1 and 3', (expect) => {
+test('Should return "win" if passed "paper" and "rock"', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const player = 1;
-    const computer = 3;
+    const player = 'paper';
+    const computer = 'rock';
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -19,11 +19,11 @@ test('Should return "win" if passed 1 and 3', (expect) => {
     expect.equal(actual, 'win');
 });
 
-test('Should return "lose" if passed 1 and 2', (expect) => {
+test('Should return "lose" if passed "paper" and "scissors" ', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const player = 1;
-    const computer = 2;
+    const player = 'paper';
+    const computer = 'scissors';
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -33,3 +33,20 @@ test('Should return "lose" if passed 1 and 2', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, 'lose');
 });
+
+test('Should return "draw" if passed "paper" and "paper" ', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const player = 'paper';
+    const computer = 'paper';
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = checkResult(player, computer);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, 'draw');
+});
+
+

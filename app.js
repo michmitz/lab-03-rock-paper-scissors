@@ -20,7 +20,7 @@ let guesses = 0;
 button.addEventListener('click', () => {
     guesses++;
     const computer = getRandomThrow();
-    const checkedRadio = document.querySelector('#input-checked');
+    const checkedRadio = document.querySelector('input:checked');
     console.log('checkedRadio', checkedRadio);
     const playerGuess = checkedRadio.value;
     console.log('playerGuess', playerGuess);
@@ -28,23 +28,22 @@ button.addEventListener('click', () => {
     const result = checkResult(playerGuess, computer);
 
     if (result === 'draw') {
-        draw++;
+        draws++;
         console.log('draw');
         winLossDisplay.textContent = 'Draw! Try again';
     }
     
     if (result === 'win') {
-        win++;
+        wins++;
         console.log('win');
         winLossDisplay.textContent = 'You won!';
     }
 
     const winsAndDrawsData = wins + draws;
-    const yaLose = guesses - winsAndDrawsData;
+    const lossData = guesses - winsAndDrawsData;
 
 
     if (result === 'lose') {
-        yaLose++
         console.log('lose');
         winLossDisplay.textContent = 'You lost! Try again.';
     }
