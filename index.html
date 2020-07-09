@@ -9,20 +9,17 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;1,200;1,800&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
-    </header>
     <main>
         <section class="main-section">
-            <h2>
-                Rock Paper Scissors!
-            </h2>
+            <h1>
+                Rock. Paper. Scissors.
+            </h1>
             <h3 class="instructions">Instructions</h3>
             <p>Try to defeat the computer! Select rock, paper, or scissors below,
                  then hit enter to throw your hand!
@@ -48,13 +45,15 @@
 
             <button id="button">Guess!</button>
             
-            <span id="display-result">You won/lost Display</span>
-            <h3 id="display-stats">Stats:</h3>
+            <span id="display-result"></span>
+
+        <section class="stats">
+            <h3 id="display-stats">Stats</h3>
             <span id="guesses-display">Guesses:</span>
             <span id="wins-display">Wins:</span>
             <span id="losses-display">Losses:</span>
             <span id="draws-display">Draws</span>
-
+        </section>
 
         </section>
     </main>
