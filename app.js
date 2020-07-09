@@ -5,10 +5,15 @@ import { getRandomThrow, checkResult } from './rpsUtils.js';
 const button = document.querySelector('#button');
 console.log('Button', button);
 const winLossDisplay = document.querySelector('#display-result');
-console.log('win display', winLossDisplay);
-const statsDisplay = document.querySelector('#display-stats');
-console.log('stat display', statsDisplay);
-
+console.log('result display', winLossDisplay);
+const guessesDisplay = document.querySelector('#guesses-display');
+console.log('guesses display', guessesDisplay);
+const winsDisplay = document.querySelector('#wins-display');
+console.log('wins display', winsDisplay);
+const lossesDisplay = document.querySelector('#losses-display');
+console.log('losses display', lossesDisplay);
+const drawsDisplay = document.querySelector('#draws-display');
+console.log('draws display', drawsDisplay);
 // initialize state
 
 let wins = 0;
@@ -25,6 +30,10 @@ button.addEventListener('click', () => {
     const playerGuess = checkedRadio.value;
     console.log('playerGuess', playerGuess);
 
+    const winsAndDrawsData = wins + draws;
+    const lossData = guesses - winsAndDrawsData;
+    
+
     const result = checkResult(playerGuess, computer);
 
     if (result === 'draw') {
@@ -39,16 +48,21 @@ button.addEventListener('click', () => {
         winLossDisplay.textContent = 'You won!';
     }
 
-    const winsAndDrawsData = wins + draws;
-    const lossData = guesses - winsAndDrawsData;
-
-
     if (result === 'lose') {
         console.log('lose');
         winLossDisplay.textContent = 'You lost! Try again.';
     }
 
+    guessesDisplay.textContent = `Guesses: ${guesses}`;
+    winsDisplay.textContent = `Wins: ${wins}`;
+    lossesDisplay.textContent = `Losses: ${lossData}`;
+    drawsDisplay.textContent = `Draws: ${draws}`;
+    
 });
+
+/* wins.textContent = `Wins: ${winData}`;
+    losses.textContent = `Losses: ${lossData}`;
+    draws.textContent = `Draws: ${drawData}` */
 
 
 
