@@ -11,7 +11,6 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-image: url('../assets/slate.jpg');
     color: white;
-    
 }
 
 main {
@@ -23,8 +22,6 @@ main {
 }
 
 section {
-    background-color: 
-    width: 800px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -33,7 +30,6 @@ section {
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
-
 }
 
 header {
@@ -91,6 +87,7 @@ button {
     font-size: 16px;
     border-radius: 25px 25px 25px 25px;
     margin: 10px;
+    margin-top: 20px;
 }
 
 .gutter-right {
@@ -118,18 +115,7 @@ p {
 img {
     height: 90px;
     width: 90px;
-}
-
-.button-section {
-    
-}
-
-img {
     margin: 20px;
-}
-
-button {
-    margin-top: 20px;
 }
 
 input:checked + img {
@@ -150,22 +136,3 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
